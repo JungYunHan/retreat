@@ -1,4 +1,8 @@
 import {
+  FinalAnswerCell,
+  FinalAnswerContainer,
+  FinalAnswerInput,
+  FinalAnswerNumberBox,
   Layout,
   PuzzleContainer,
   PuzzleGreyCell,
@@ -6,6 +10,8 @@ import {
   PuzzleNumberText,
   PuzzleWhiteCell,
   QuizTitle,
+  SubmitButton,
+  SubmitButtonContainer,
 } from './index.styled.ts'
 import { useEffect, useState } from 'react'
 import {
@@ -63,6 +69,14 @@ const QuizPage = () => {
     117: '',
     128: '',
   })
+  const [finalAnswerInputs, setFinalAnswerInputs] = useState<
+    Record<number, string>
+  >({
+    1: '',
+    2: '',
+    3: '',
+    4: '',
+  })
 
   useEffect(() => {
     const crossword = localStorage.getItem('crossword')
@@ -71,7 +85,7 @@ const QuizPage = () => {
     }
   }, [])
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePuzzleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setInputs({
       ...inputs,
@@ -136,6 +150,45 @@ const QuizPage = () => {
     return inputs[key] !== undefined && inputs[key] === crosswordAnswers[key]
   })
 
+  const handleFinalAnswerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setFinalAnswerInputs({
+      ...finalAnswerInputs,
+      [name]: value,
+    })
+  }
+
+  const handleFinalAnswerSubmit = () => {
+    const finalAnswer = Object.values(finalAnswerInputs).join('')
+    if (
+      isFirstRowCorrect &&
+      isSecondRowCorrect &&
+      isThirdRowCorrect &&
+      isFourthRowCorrect &&
+      isFifthRowCorrect &&
+      isSixthRowCorrect &&
+      isSeventhRowCorrect &&
+      isEighthRowCorrect &&
+      isNinthRowCorrect &&
+      isFirstColumnCorrect &&
+      isSecondColumnCorrect &&
+      isThirdColumnCorrect &&
+      isFourthColumnCorrect &&
+      isFifthColumnCorrect &&
+      isSixthColumnCorrect &&
+      isSeventhColumnCorrect &&
+      isEighthColumnCorrect &&
+      finalAnswer === '아도나이'
+    ) {
+      localStorage.removeItem('crossword')
+      alert('정답입니다!')
+    } else if (finalAnswer === '아도나이') {
+      alert('가로 세로 퍼즐을 다 풀어주세요!')
+    } else {
+      alert('틀렸습니다!')
+    }
+  }
+
   return (
     <Layout>
       <QuizTitle>가로 세로 퍼즐</QuizTitle>
@@ -148,7 +201,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['1']}
             name={'1'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFirstRowCorrect}>
@@ -158,7 +211,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['2']}
             name={'2'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFirstRowCorrect}>
@@ -168,7 +221,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['3']}
             name={'3'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFirstRowCorrect || isSecondColumnCorrect}>
@@ -178,7 +231,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['4']}
             name={'4'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -194,7 +247,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['7']}
             name={'7'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSecondRowCorrect || isThirdColumnCorrect}>
@@ -204,7 +257,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['8']}
             name={'8'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSecondRowCorrect}>
@@ -214,7 +267,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['9']}
             name={'9'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -235,7 +288,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['13']}
             name={'13'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -251,7 +304,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['16']}
             name={'16'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -270,7 +323,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['20']}
             name={'20'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -294,7 +347,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['25']}
             name={'25'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -310,7 +363,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['28']}
             name={'28'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -329,7 +382,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['32']}
             name={'32'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -353,7 +406,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['37']}
             name={'37'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -369,7 +422,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['40']}
             name={'40'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -385,7 +438,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['43']}
             name={'43'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isThirdRowCorrect || isThirdColumnCorrect}>
@@ -395,7 +448,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['44']}
             name={'44'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isThirdRowCorrect}>
@@ -405,7 +458,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['45']}
             name={'45'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isThirdRowCorrect}>
@@ -415,7 +468,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['46']}
             name={'46'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -442,7 +495,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['52']}
             name={'52'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -458,7 +511,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['55']}
             name={'55'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -494,7 +547,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['64']}
             name={'64'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFourthRowCorrect || isFifthColumnCorrect}>
@@ -504,7 +557,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['65']}
             name={'65'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -517,7 +570,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['67']}
             name={'67'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -530,7 +583,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['69']}
             name={'69'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFifthRowCorrect || isSixthColumnCorrect}>
@@ -540,7 +593,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['70']}
             name={'70'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFifthRowCorrect}>
@@ -550,7 +603,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['71']}
             name={'71'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -577,7 +630,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['77']}
             name={'77'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -599,7 +652,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['82']}
             name={'82'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -620,7 +673,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['86']}
             name={'86'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -636,7 +689,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['89']}
             name={'89'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSixthRowCorrect}>
@@ -646,7 +699,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['90']}
             name={'90'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSixthRowCorrect}>
@@ -656,7 +709,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['91']}
             name={'91'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSixthRowCorrect || isEighthColumnCorrect}>
@@ -666,7 +719,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['92']}
             name={'92'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -679,7 +732,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['94']}
             name={'94'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSeventhRowCorrect}>
@@ -689,7 +742,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['95']}
             name={'95'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSeventhRowCorrect}>
@@ -699,7 +752,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['96']}
             name={'96'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
 
@@ -716,7 +769,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['98']}
             name={'98'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isEighthRowCorrect}>
@@ -726,7 +779,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['99']}
             name={'99'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isEighthRowCorrect}>
@@ -736,7 +789,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['100']}
             name={'100'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isEighthRowCorrect || isFifthColumnCorrect}>
@@ -746,7 +799,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['101']}
             name={'101'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -762,7 +815,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['104']}
             name={'104'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -789,7 +842,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['110']}
             name={'110'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -814,7 +867,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['116']}
             name={'116'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isNinthRowCorrect}>
@@ -824,7 +877,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['117']}
             name={'117'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -866,7 +919,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['128']}
             name={'128'}
-            onChange={handleInputChange}
+            onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleGreyCell>
@@ -882,6 +935,48 @@ const QuizPage = () => {
           <PuzzleNumberText>132</PuzzleNumberText>
         </PuzzleGreyCell>
       </PuzzleContainer>
+
+      <FinalAnswerContainer>
+        <FinalAnswerCell>
+          <FinalAnswerNumberBox>1</FinalAnswerNumberBox>
+          <FinalAnswerInput
+            type={'text'}
+            maxLength={1}
+            name={'1'}
+            onChange={handleFinalAnswerChange}
+          />
+        </FinalAnswerCell>
+        <FinalAnswerCell>
+          <FinalAnswerNumberBox>2</FinalAnswerNumberBox>
+          <FinalAnswerInput
+            type={'text'}
+            maxLength={1}
+            name={'2'}
+            onChange={handleFinalAnswerChange}
+          />
+        </FinalAnswerCell>
+        <FinalAnswerCell>
+          <FinalAnswerNumberBox>3</FinalAnswerNumberBox>
+          <FinalAnswerInput
+            type={'text'}
+            maxLength={1}
+            name={'3'}
+            onChange={handleFinalAnswerChange}
+          />
+        </FinalAnswerCell>
+        <FinalAnswerCell>
+          <FinalAnswerNumberBox>4</FinalAnswerNumberBox>
+          <FinalAnswerInput
+            type={'text'}
+            maxLength={1}
+            name={'4'}
+            onChange={handleFinalAnswerChange}
+          />
+        </FinalAnswerCell>
+      </FinalAnswerContainer>
+      <SubmitButtonContainer>
+        <SubmitButton onClick={handleFinalAnswerSubmit}>제출</SubmitButton>
+      </SubmitButtonContainer>
     </Layout>
   )
 }
