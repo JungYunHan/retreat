@@ -87,14 +87,18 @@ const QuizPage = () => {
 
   const handlePuzzleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
+
     setInputs({
       ...inputs,
-      [name]: value,
+      [name]: value.replace(/[^ㄱ-ㅎㅏ-ㅣ가-힣]/g, ''),
     })
 
     localStorage.setItem(
       'crossword',
-      JSON.stringify({ ...inputs, [name]: value }),
+      JSON.stringify({
+        ...inputs,
+        [name]: value.replace(/[^ㄱ-ㅎㅏ-ㅣ가-힣]/g, ''),
+      }),
     )
   }
 
@@ -154,7 +158,7 @@ const QuizPage = () => {
     const { name, value } = e.target
     setFinalAnswerInputs({
       ...finalAnswerInputs,
-      [name]: value,
+      [name]: value.replace(/[^ㄱ-ㅎㅏ-ㅣ가-힣]/g, ''),
     })
   }
 
