@@ -186,10 +186,29 @@ const QuizPage = () => {
     ) {
       localStorage.removeItem('crossword')
       alert('정답입니다!')
-    } else if (finalAnswer === '아도나이') {
-      alert('가로 세로 퍼즐을 다 풀어주세요!')
-    } else {
+    } else if (
+      isFirstRowCorrect &&
+      isSecondRowCorrect &&
+      isThirdRowCorrect &&
+      isFourthRowCorrect &&
+      isFifthRowCorrect &&
+      isSixthRowCorrect &&
+      isSeventhRowCorrect &&
+      isEighthRowCorrect &&
+      isNinthRowCorrect &&
+      isFirstColumnCorrect &&
+      isSecondColumnCorrect &&
+      isThirdColumnCorrect &&
+      isFourthColumnCorrect &&
+      isFifthColumnCorrect &&
+      isSixthColumnCorrect &&
+      isSeventhColumnCorrect &&
+      isEighthColumnCorrect &&
+      finalAnswer !== '아도나이'
+    ) {
       alert('틀렸습니다!')
+    } else {
+      alert('가로 세로 퍼즐을 다 풀어주세요!')
     }
   }
 
@@ -946,6 +965,7 @@ const QuizPage = () => {
           <FinalAnswerInput
             type={'text'}
             maxLength={1}
+            value={finalAnswerInputs['1']}
             name={'1'}
             onChange={handleFinalAnswerChange}
           />
@@ -955,6 +975,7 @@ const QuizPage = () => {
           <FinalAnswerInput
             type={'text'}
             maxLength={1}
+            value={finalAnswerInputs['2']}
             name={'2'}
             onChange={handleFinalAnswerChange}
           />
@@ -964,6 +985,7 @@ const QuizPage = () => {
           <FinalAnswerInput
             type={'text'}
             maxLength={1}
+            value={finalAnswerInputs['3']}
             name={'3'}
             onChange={handleFinalAnswerChange}
           />
@@ -973,6 +995,7 @@ const QuizPage = () => {
           <FinalAnswerInput
             type={'text'}
             maxLength={1}
+            value={finalAnswerInputs['4']}
             name={'4'}
             onChange={handleFinalAnswerChange}
           />
