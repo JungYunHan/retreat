@@ -19,8 +19,11 @@ import {
   crosswordAnswers,
   rowMap,
 } from '../../constants/crossword.ts'
+import { useNavigate } from 'react-router-dom'
 
 const QuizPage = () => {
+  const navigate = useNavigate()
+
   const [inputs, setInputs] = useState<Record<number, string>>({
     1: '',
     2: '',
@@ -186,6 +189,7 @@ const QuizPage = () => {
     ) {
       localStorage.removeItem('crossword')
       alert('정답입니다!')
+      navigate('/video')
     } else if (
       isFirstRowCorrect &&
       isSecondRowCorrect &&
