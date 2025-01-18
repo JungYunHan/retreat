@@ -10,7 +10,6 @@ import {
   PuzzleNumberText,
   PuzzleWhiteCell,
   QuizTitle,
-  SubmitButton,
   SubmitButtonContainer,
 } from './index.styled.ts'
 import { ChangeEvent, useEffect, useState } from 'react'
@@ -20,6 +19,7 @@ import {
   rowMap,
 } from '../../constants/crossword.ts'
 import { useNavigate } from 'react-router-dom'
+import { Button } from '../../components/common/Button.tsx'
 
 const QuizPage = () => {
   const navigate = useNavigate()
@@ -1056,7 +1056,7 @@ const QuizPage = () => {
         </FinalAnswerCell>
       </FinalAnswerContainer>
       <SubmitButtonContainer>
-        <SubmitButton onClick={handleFinalAnswerSubmit}>제출</SubmitButton>
+        <Button onClick={handleFinalAnswerSubmit}>제출</Button>
       </SubmitButtonContainer>
     </Layout>
   )

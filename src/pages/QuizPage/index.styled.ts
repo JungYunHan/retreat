@@ -11,6 +11,7 @@ export const Layout = styled.div`
 `
 
 export const QuizTitle = styled.h1`
+  font-family: GmarketSans, sans-serif;
   text-align: center;
   font-size: 24px;
   font-weight: 700;
@@ -60,9 +61,11 @@ export const PuzzleInput = styled.input`
   text-align: center;
   font-size: 12px;
   font-weight: bold;
+  font-family: Pretendard, sans-serif;
 `
 
 export const PuzzleNumberText = styled.span`
+  font-family: Pretendard, sans-serif;
   position: absolute;
   top: 2px;
   left: 2px;
@@ -93,6 +96,7 @@ export const FinalAnswerCell = styled.div`
 `
 
 export const FinalAnswerInput = styled.input`
+  font-family: Pretendard, sans-serif;
   width: 100%;
   height: 100%;
   border: none;
@@ -103,6 +107,7 @@ export const FinalAnswerInput = styled.input`
 `
 
 export const FinalAnswerNumberBox = styled.div`
+  font-family: Pretendard, sans-serif;
   position: absolute;
   top: 2px;
   left: 2px;
@@ -120,16 +125,4 @@ export const SubmitButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
-
-export const SubmitButton = styled.button`
-  width: 120px;
-  height: 30px;
-  background-color: #10954d;
-  color: #ffffff;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 8px;
 `
