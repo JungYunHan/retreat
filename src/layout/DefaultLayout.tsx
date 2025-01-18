@@ -10,6 +10,7 @@ const Layout = styled.div`
   margin-inline: auto;
   max-width: 430px;
   min-width: 320px;
+  overflow: hidden;
 `
 
 const DefaultLayout = () => {

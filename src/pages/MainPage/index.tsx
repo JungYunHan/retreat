@@ -1,6 +1,16 @@
-import { Layout, MainImage } from './index.styled.ts'
-import MainPoster from '@/assets/images/main.jpeg'
+import {
+  CommunitySymbol,
+  Layout,
+  MissionSymbol,
+  SubTitle,
+  Title,
+  WorshipSymbol,
+} from './index.styled.ts'
+import Worship from '@/assets/images/worship.png'
+import Community from '@/assets/images/community.png'
+import Mission from '@/assets/images/mission.png'
 import { useNavigate } from 'react-router-dom'
+import { Button } from '../../components/common/Button.tsx'
 
 const MainPage = () => {
   const navigate = useNavigate()
@@ -11,8 +21,12 @@ const MainPage = () => {
 
   return (
     <Layout>
-      <MainImage src={MainPoster} />
-      <button onClick={handleStartQuiz}>퀴즈 시작하기</button>
+      <WorshipSymbol src={Worship} />
+      <CommunitySymbol src={Community} />
+      <MissionSymbol src={Mission} />
+      <Title>이제, 다시 함께</Title>
+      <SubTitle>셀끼리함께</SubTitle>
+      <Button onClick={handleStartQuiz}>시작하기</Button>
     </Layout>
   )
 }
