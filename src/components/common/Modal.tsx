@@ -29,9 +29,10 @@ const Overlay = styled.div`
 
 const Container = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 318px;
-  padding: 20px;
+  padding: 40px;
   border-radius: 20px;
   background-color: #fff;
   z-index: 1001;
