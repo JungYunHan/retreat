@@ -136,7 +136,6 @@ export const ModalTitle = styled.h1`
 export const ModalInput = styled.input<{ $color: string }>`
   width: 100%;
   height: 30px;
-  text-align: center;
   font-size: 16px;
   font-weight: 600;
   border: 2px solid black;
