@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 import { ReactNode } from 'react'
 
-export const Modal = ({ children }: { children: ReactNode }) => {
+interface Props {
+  children: ReactNode
+  onOverlayClick?: () => void
+}
+
+export const Modal = ({ children, onOverlayClick }: Props) => {
   return (
-    <Overlay>
+    <Overlay onClick={onOverlayClick}>
       <Container>{children}</Container>
     </Overlay>
   )
