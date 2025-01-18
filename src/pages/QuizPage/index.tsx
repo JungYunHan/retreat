@@ -13,7 +13,7 @@ import {
   SubmitButton,
   SubmitButtonContainer,
 } from './index.styled.ts'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import {
   columnMap,
   crosswordAnswers,
@@ -88,7 +88,7 @@ const QuizPage = () => {
     }
   }, [])
 
-  const handlePuzzleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePuzzleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
 
     setInputs({
@@ -228,6 +228,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['1']}
             name={'1'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -238,6 +239,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['2']}
             name={'2'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -248,6 +250,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['3']}
             name={'3'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -258,6 +261,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['4']}
             name={'4'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -274,6 +278,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['7']}
             name={'7'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -284,6 +289,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['8']}
             name={'8'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -294,6 +300,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['9']}
             name={'9'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -315,6 +322,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['13']}
             name={'13'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -331,6 +339,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['16']}
             name={'16'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -350,6 +359,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['20']}
             name={'20'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -374,6 +384,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['25']}
             name={'25'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -390,6 +401,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['28']}
             name={'28'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -409,6 +421,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['32']}
             name={'32'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -433,6 +446,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['37']}
             name={'37'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -449,6 +463,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['40']}
             name={'40'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -465,6 +480,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['43']}
             name={'43'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -475,6 +491,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['44']}
             name={'44'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -485,6 +502,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['45']}
             name={'45'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -495,6 +513,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['46']}
             name={'46'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -522,6 +541,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['52']}
             name={'52'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -538,6 +558,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['55']}
             name={'55'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -574,6 +595,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['64']}
             name={'64'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -584,6 +606,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['65']}
             name={'65'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -597,6 +620,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['67']}
             name={'67'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -610,6 +634,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['69']}
             name={'69'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -620,6 +645,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['70']}
             name={'70'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -630,6 +656,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['71']}
             name={'71'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -657,6 +684,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['77']}
             name={'77'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -679,6 +707,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['82']}
             name={'82'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -700,6 +729,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['86']}
             name={'86'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -716,6 +746,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['89']}
             name={'89'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -726,6 +757,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['90']}
             name={'90'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -736,6 +768,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['91']}
             name={'91'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -746,6 +779,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['92']}
             name={'92'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -759,6 +793,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['94']}
             name={'94'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -769,6 +804,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['95']}
             name={'95'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -779,6 +815,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['96']}
             name={'96'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -796,6 +833,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['98']}
             name={'98'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -806,6 +844,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['99']}
             name={'99'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -816,6 +855,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['100']}
             name={'100'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -826,6 +866,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['101']}
             name={'101'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -842,6 +883,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['104']}
             name={'104'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -869,6 +911,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['110']}
             name={'110'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -894,6 +937,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['116']}
             name={'116'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -904,6 +948,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['117']}
             name={'117'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -946,6 +991,7 @@ const QuizPage = () => {
             maxLength={1}
             value={inputs['128']}
             name={'128'}
+            autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
@@ -971,6 +1017,7 @@ const QuizPage = () => {
             maxLength={1}
             value={finalAnswerInputs['1']}
             name={'1'}
+            autoComplete={'off'}
             onChange={handleFinalAnswerChange}
           />
         </FinalAnswerCell>
@@ -981,6 +1028,7 @@ const QuizPage = () => {
             maxLength={1}
             value={finalAnswerInputs['2']}
             name={'2'}
+            autoComplete={'off'}
             onChange={handleFinalAnswerChange}
           />
         </FinalAnswerCell>
@@ -991,6 +1039,7 @@ const QuizPage = () => {
             maxLength={1}
             value={finalAnswerInputs['3']}
             name={'3'}
+            autoComplete={'off'}
             onChange={handleFinalAnswerChange}
           />
         </FinalAnswerCell>
@@ -1001,6 +1050,7 @@ const QuizPage = () => {
             maxLength={1}
             value={finalAnswerInputs['4']}
             name={'4'}
+            autoComplete={'off'}
             onChange={handleFinalAnswerChange}
           />
         </FinalAnswerCell>
