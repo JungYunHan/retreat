@@ -20,6 +20,7 @@ import {
 } from '../../constants/crossword.ts'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../../components/common/Button.tsx'
+import { Modal } from '../../components/common/Modal.tsx'
 
 const QuizPage = () => {
   const navigate = useNavigate()
@@ -80,6 +81,12 @@ const QuizPage = () => {
     3: '',
     4: '',
   })
+  const [isAllAnswerCorrectModalOpen, setIsAllAnswerCorrectModalOpen] =
+    useState(false)
+  const [isCrosswordAnswerWrongModalOpen, setIsCrosswordAnswerWrongModalOpen] =
+    useState(false)
+  const [isFinalAnswerWrongModalOpen, setIsFinalAnswerWrongModalOpen] =
+    useState(false)
 
   useEffect(() => {
     const crossword = localStorage.getItem('crossword')
@@ -187,9 +194,7 @@ const QuizPage = () => {
       isEighthColumnCorrect &&
       finalAnswer === '아도나이'
     ) {
-      localStorage.removeItem('crossword')
-      alert('정답입니다!')
-      navigate('/video')
+      setIsAllAnswerCorrectModalOpen(true)
     } else if (
       isFirstRowCorrect &&
       isSecondRowCorrect &&
@@ -210,10 +215,24 @@ const QuizPage = () => {
       isEighthColumnCorrect &&
       finalAnswer !== '아도나이'
     ) {
-      alert('틀렸습니다!')
+      setIsFinalAnswerWrongModalOpen(true)
     } else {
-      alert('가로 세로 퍼즐을 다 풀어주세요!')
+      setIsCrosswordAnswerWrongModalOpen(true)
     }
+  }
+
+  const handleAllAnswerCorrectModalClose = () => {
+    setIsAllAnswerCorrectModalOpen(false)
+    localStorage.removeItem('crossword')
+    navigate('/updown')
+  }
+
+  const handleCrosswordAnswerWrongModalClose = () => {
+    setIsCrosswordAnswerWrongModalOpen(false)
+  }
+
+  const handleFinalAnswerWrongModalClose = () => {
+    setIsFinalAnswerWrongModalOpen(false)
   }
 
   return (
@@ -1058,6 +1077,24 @@ const QuizPage = () => {
       <SubmitButtonContainer>
         <Button onClick={handleFinalAnswerSubmit}>제출</Button>
       </SubmitButtonContainer>
+
+      {isAllAnswerCorrectModalOpen && (
+        <Modal onOverlayClick={handleAllAnswerCorrectModalClose}>
+          <div>정답입니다.</div>
+        </Modal>
+      )}
+
+      {isCrosswordAnswerWrongModalOpen && (
+        <Modal onOverlayClick={handleCrosswordAnswerWrongModalClose}>
+          <div>가로 세로 퍼즐을 다 풀어주세요!</div>
+        </Modal>
+      )}
+
+      {isFinalAnswerWrongModalOpen && (
+        <Modal onOverlayClick={handleFinalAnswerWrongModalClose}>
+          <div>틀렸습니다. 다시 입력해주세요.</div>
+        </Modal>
+      )}
     </Layout>
   )
 }
