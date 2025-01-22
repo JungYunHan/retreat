@@ -11,10 +11,12 @@ import {
   QuizTitle,
   RedCell,
   YellowCell,
-} from './index.styled.ts'
+} from '@/pages/UpDownQuizPage/index.styled.ts'
 import { ChangeEvent, useState } from 'react'
 import { Modal } from '../../components/common/Modal.tsx'
 import { Button } from '../../components/common/Button.tsx'
+import { Modal } from '@/components/common/Modal.tsx'
+import { Button } from '@/components/common/Button.tsx'
 import { useNavigate } from 'react-router-dom'
 
 const UpDownQuizPage = () => {

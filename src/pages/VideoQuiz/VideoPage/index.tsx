@@ -7,6 +7,7 @@ import {
 } from './index.styled.ts'
 import VideoSource from '@/assets/videos/video-test.mp4'
 import { useEffect, useState } from 'react'
+} from '@/pages/VideoQuiz/VideoPage/index.styled'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '../../../components/common/Button.tsx'
 

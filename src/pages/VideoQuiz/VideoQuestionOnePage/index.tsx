@@ -1,7 +1,13 @@
-import { Input, Layout, ModalContentBox, Title } from './index.styled.ts'
-import { Button } from '../../../components/common/Button.tsx'
+import {
+  Input,
+  Layout,
+  ModalContentBox,
+  Strong,
+  Title,
+} from '@/pages/VideoQuiz/VideoQuestionOnePage/index.styled.ts'
+import { Button } from '@/components/common/Button.tsx'
 import { ChangeEvent, useState } from 'react'
-import { Modal } from '../../../components/common/Modal.tsx'
+import { Modal } from '@/components/common/Modal.tsx'
 import { useNavigate } from 'react-router-dom'
 
 const VideoQuestionOnePage = () => {

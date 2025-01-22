@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Button } from '../../components/common/Button.tsx'
+import { Button } from '@/components/common/Button.tsx'
 import { useNavigate } from 'react-router-dom'
 import Train from '@/assets/images/train.png'
 

@@ -10,6 +10,13 @@ import VideoPage from './pages/VideoQuiz/VideoPage'
 import NotFoundPage from './pages/NotFoundPage'
 import UpDownQuizPage from './pages/UpDownQuizPage'
 import VideoQuestionOnePage from './pages/VideoQuiz/VideoQuestionOnePage'
+import MainPage from '@/pages/MainPage'
+import DefaultLayout from '@/layout/DefaultLayout.tsx'
+import QuizPage from '@/pages/QuizPage'
+import VideoPage from '@/pages/VideoQuiz/VideoPage'
+import NotFoundPage from '@/pages/NotFoundPage'
+import UpDownQuizPage from '@/pages/UpDownQuizPage'
+import VideoQuestionOnePage from '@/pages/VideoQuiz/VideoQuestionOnePage'
 
 const createRouter = () => {
   return createBrowserRouter(
