@@ -22,7 +22,11 @@ const VideoQuestionOnePage = () => {
   }
 
   const handleButtonClick = () => {
-    if (input === '1' || input === '1번') {
+    if (!input) {
+      return
+    }
+
+    if (input === '2' || input === '2번') {
       setIsAnswerCorrectModalOpen(true)
     } else {
       setIsAnswerWrongModal(true)
@@ -31,17 +35,18 @@ const VideoQuestionOnePage = () => {
 
   const handleIsAnswerCorrectModalClose = () => {
     setIsAnswerCorrectModalOpen(false)
-    navigate('/')
+    navigate('/final')
   }
 
   const handleModalButtonClick = () => {
     setIsAnswerWrongModal(false)
+    navigate('/video')
   }
 
   return (
     <Layout>
       <Title>
-        건희 형이 '테스트'라는 단어를
+        이형주 목사님이 <Strong>공동체</Strong>를
         <br />몇 번 말했나요?
       </Title>
       <Input onChange={handleInputChange} />
