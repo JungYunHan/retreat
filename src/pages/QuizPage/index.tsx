@@ -219,7 +219,6 @@ const QuizPage = () => {
 
   const handleAllAnswerCorrectModalClose = () => {
     setIsAllAnswerCorrectModalOpen(false)
-    localStorage.removeItem('crossword')
     navigate('/updown')
   }
 

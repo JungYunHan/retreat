@@ -6,8 +6,14 @@ import {
   Title,
 } from '@/pages/FindPersonPage/index.styled.ts'
 import Train from '@/assets/images/train.png'
+import { useEffect } from 'react'
 
 const FindPersonPage = () => {
+  useEffect(() => {
+    localStorage.removeItem('countVideoPlayed')
+    localStorage.removeItem('crossword')
+  }, [])
+
   return (
     <Layout>
       <Image src={Train} />
