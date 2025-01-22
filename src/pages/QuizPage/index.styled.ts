@@ -3,11 +3,13 @@ import styled from 'styled-components'
 export const Layout = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   max-width: 430px;
   min-width: 320px;
   gap: 20px;
-  padding: 20px 0;
+  padding-top: 50px;
+  padding-bottom: 20px;
 `
 
 export const QuizTitle = styled.h1`

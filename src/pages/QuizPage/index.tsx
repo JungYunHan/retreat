@@ -15,8 +15,6 @@ import {
 import { ChangeEvent, useEffect, useState } from 'react'
 import { columnMap, crosswordAnswers, rowMap } from '@/constants/crossword.ts'
 import { useNavigate } from 'react-router-dom'
-import { Button } from '../../components/common/Button.tsx'
-import { Modal } from '../../components/common/Modal.tsx'
 import { Button } from '@/components/common/Button.tsx'
 import { Modal } from '@/components/common/Modal.tsx'
 
