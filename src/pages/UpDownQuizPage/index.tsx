@@ -13,8 +13,6 @@ import {
   YellowCell,
 } from '@/pages/UpDownQuizPage/index.styled.ts'
 import { ChangeEvent, useState } from 'react'
-import { Modal } from '../../components/common/Modal.tsx'
-import { Button } from '../../components/common/Button.tsx'
 import { Modal } from '@/components/common/Modal.tsx'
 import { Button } from '@/components/common/Button.tsx'
 import { useNavigate } from 'react-router-dom'
@@ -104,7 +102,6 @@ const UpDownQuizPage = () => {
         </RedCell>
       </QuizContent>
       <InputBox>
-        ACTS
         <Input
           $color={'#ee64b3'}
           name={'1'}
@@ -138,7 +135,7 @@ const UpDownQuizPage = () => {
       {isCorrect && (
         <Modal>
           <ModalBox>
-            <ModalTitle>ACTS 0246</ModalTitle>
+            <ModalTitle>행 02:46</ModalTitle>
             <ModalInput
               $color={'#fff'}
               autoComplete={'off'}
