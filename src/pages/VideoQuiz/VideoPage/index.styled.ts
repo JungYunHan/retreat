@@ -7,7 +7,8 @@ export const Layout = styled.div`
   max-width: 430px;
   min-width: 320px;
   gap: 20px;
-  padding: 20px 0;
+  padding-top: 50px;
+  padding-bottom: 20px;
 `
 
 export const Title = styled.div`
@@ -17,6 +18,14 @@ export const Title = styled.div`
   text-align: center;
 `
 
+export const WarningText = styled.div`
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: red;
+`
+
 export const VideoContainer = styled.div`
   position: relative;
   width: 100%;
@@ -24,13 +33,27 @@ export const VideoContainer = styled.div`
 
 export const Video = styled.video`
   width: 100%;
-  height: 550px;
-  object-fit: cover;
+  height: 250px;
+  object-fit: contain;
   background-color: black;
+
+  &::-webkit-media-controls-fullscreen-button {
+    display: none;
+  }
+  &::-webkit-media-controls-timeline {
+    display: none;
+  }
 `
 
-export const SubmitButtonContainer = styled.div`
+export const PlayButtonImageContainer = styled.div`
+  position: absolute;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 250px;
+  background-color: black;
+  opacity: 0.5;
+  cursor: pointer;
 `

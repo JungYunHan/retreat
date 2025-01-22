@@ -2,51 +2,93 @@ import {
   Layout,
   VideoContainer,
   Video,
-  SubmitButtonContainer,
   Title,
-} from './index.styled.ts'
-import VideoSource from '@/assets/videos/video-test.mp4'
-import { useEffect, useState } from 'react'
+  WarningText,
+  PlayButtonImageContainer,
 } from '@/pages/VideoQuiz/VideoPage/index.styled'
+import VideoSource from '@/assets/videos/video-quiz.mp4'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button } from '../../../components/common/Button.tsx'
+import { PlayIcon } from '@/assets/svgs'
 
 const VideoPage = () => {
   const navigate = useNavigate()
 
-  const [showControls, setShowControls] = useState(true)
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const handlePlaybackRate = (rate: number) => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = rate
+    }
+  }
 
   useEffect(() => {
-    if (localStorage.getItem('isPlayed')) {
-      setShowControls(false)
+    if (localStorage.getItem('countVideoPlayed') === '1') {
+      handlePlaybackRate(1.5)
+    } else {
+      handlePlaybackRate(1)
+    }
+
+    window.onbeforeunload = () => {
+      return ''
+    }
+    document.body.style.overflow = 'hidden'
+    document.addEventListener(
+      'touchmove',
+      (e) => {
+        if (e.touches.length > 1) {
+          e.preventDefault()
+        }
+      },
+      { passive: false },
+    )
+
+    return () => {
+      window.onbeforeunload = null
+      document.body.style.overflow = ''
     }
   }, [])
 
   const handlePlay = () => {
-    setShowControls(false)
-    localStorage.setItem('isPlayed', 'true')
+    if (!localStorage.getItem('countVideoPlayed')) {
+      localStorage.setItem('countVideoPlayed', '1')
+    } else {
+      localStorage.setItem('countVideoPlayed', '2')
+    }
+
+    if (videoRef.current) {
+      videoRef.current.play()
+    }
+
+    setIsPlaying(true)
   }
 
-  const handleSubmitButtonClick = () => {
+  const handleVideoEnded = () => {
     navigate('/video/question-one')
   }
 
   return (
     <Layout>
-      <Title>영상은 1회 재생됩니다. 집중해서 보세요.</Title>
-      <VideoContainer>
+      <Title>영상 퀴즈</Title>
+      <WarningText>영상을 보시기 전 음량을 키워주세요!</WarningText>
+      <VideoContainer onClick={handlePlay}>
+        {!isPlaying && (
+          <PlayButtonImageContainer>
+            <PlayIcon width={'100px'} height={'100px'} fill={'white'} />
+          </PlayButtonImageContainer>
+        )}
         <Video
+          ref={videoRef}
           playsInline
-          onClick={handlePlay}
-          onPlay={handlePlay}
-          controls={showControls}
+          controls={false}
+          controlsList={'nodownload'}
+          onContextMenu={(e) => e.preventDefault()}
+          onEnded={handleVideoEnded}
         >
           <source src={VideoSource} type="video/mp4" />
         </Video>
       </VideoContainer>
-      <SubmitButtonContainer>
-        <Button onClick={handleSubmitButtonClick}>퀴즈 풀러가기</Button>
-      </SubmitButtonContainer>
     </Layout>
   )
 }
