@@ -7,7 +7,7 @@ export const Layout = styled.div`
   max-width: 430px;
   min-width: 320px;
   gap: 50px;
-  padding: 20px 0;
+  padding-top: 50px;
 `
 
 export const QuizTitle = styled.h1`
@@ -21,7 +21,7 @@ export const QuizContent = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 70px);
   grid-template-rows: repeat(2, 70px);
-  gap: 15px;
+  gap: 12px;
   margin: auto;
 `
 
