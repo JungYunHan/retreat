@@ -10,12 +10,13 @@ export const Layout = styled.div`
   height: 100%;
   max-width: 430px;
   min-width: 320px;
+  min-height: 100vh;
   gap: 20px;
 `
 
 export const WorshipSymbol = styled.img`
   position: absolute;
-  top: 7%;
+  top: calc(15% - 125px);
   left: -15%;
   width: 250px;
   height: 250px;
@@ -25,7 +26,7 @@ export const WorshipSymbol = styled.img`
 
 export const CommunitySymbol = styled.img`
   position: absolute;
-  top: 33%;
+  top: calc(50% - 125px);
   right: -20%;
   width: 250px;
   height: 250px;
@@ -35,8 +36,8 @@ export const CommunitySymbol = styled.img`
 
 export const MissionSymbol = styled.img`
   position: absolute;
-  bottom: 5%;
-  left: 25%;
+  bottom: -25px;
+  left: calc(50% - 100px);
   width: 200px;
   height: 200px;
   object-fit: cover;
