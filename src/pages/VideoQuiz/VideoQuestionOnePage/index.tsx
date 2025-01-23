@@ -26,7 +26,13 @@ const VideoQuestionOnePage = () => {
       return
     }
 
-    if (input === '2' || input === '2번') {
+    const answerInput = input.replace(/\s/g, '')
+
+    if (
+      answerInput === '2' ||
+      answerInput === '2번' ||
+      answerInput === '두번'
+    ) {
       setIsAnswerCorrectModalOpen(true)
     } else {
       setIsAnswerWrongModal(true)
