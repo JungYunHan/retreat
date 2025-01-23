@@ -17,7 +17,19 @@ const VideoPage = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
 
+  const handlePlaybackRate = (rate: number) => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = rate
+    }
+  }
+
   useEffect(() => {
+    if (localStorage.getItem('isPlayed') === 'true') {
+      handlePlaybackRate(1.2)
+    } else {
+      handlePlaybackRate(1)
+    }
+
     window.onbeforeunload = () => {
       return ''
     }
@@ -43,6 +55,7 @@ const VideoPage = () => {
       videoRef.current.play()
     }
 
+    localStorage.setItem('isPlayed', 'true')
     setIsPlaying(true)
   }
 
