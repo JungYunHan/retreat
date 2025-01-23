@@ -17,19 +17,7 @@ const VideoPage = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
 
-  const handlePlaybackRate = (rate: number) => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = rate
-    }
-  }
-
   useEffect(() => {
-    if (localStorage.getItem('countVideoPlayed') === '1') {
-      handlePlaybackRate(1.5)
-    } else {
-      handlePlaybackRate(1)
-    }
-
     window.onbeforeunload = () => {
       return ''
     }
@@ -51,12 +39,6 @@ const VideoPage = () => {
   }, [])
 
   const handlePlay = () => {
-    if (!localStorage.getItem('countVideoPlayed')) {
-      localStorage.setItem('countVideoPlayed', '1')
-    } else {
-      localStorage.setItem('countVideoPlayed', '2')
-    }
-
     if (videoRef.current) {
       videoRef.current.play()
     }

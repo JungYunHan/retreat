@@ -10,7 +10,6 @@ import { useEffect } from 'react'
 
 const FindPersonPage = () => {
   useEffect(() => {
-    localStorage.removeItem('countVideoPlayed')
     localStorage.removeItem('crossword')
   }, [])
 
