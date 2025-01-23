@@ -11,7 +11,6 @@ import Community from '@/assets/images/community.png'
 import Mission from '@/assets/images/mission.png'
 import { useNavigate } from 'react-router-dom'
 import { Button } from '@/components/common/Button.tsx'
-import { useEffect } from 'react'
 
 const MainPage = () => {
   const navigate = useNavigate()
