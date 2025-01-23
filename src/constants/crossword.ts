@@ -63,7 +63,7 @@ export const crosswordAnswers: Record<number, string> = {
   99: '드',
   100: '사',
   101: '엘',
-  104: '릴',
+  104: '리',
   110: '롯',
   116: '기',
   117: '도',
