@@ -60,3 +60,22 @@ export const SubTitle = styled.h2`
   flex-direction: column;
   z-index: 10;
 `
+
+export const ModalLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+`
+
+export const NotificationBox = styled.div`
+  font-family: Pretendard, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+`
+
+export const StrongText = styled.span`
+  font-weight: 600;
+`
