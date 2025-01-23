@@ -13,6 +13,9 @@ import { useEffect } from 'react'
 const FindPersonPage = () => {
   useEffect(() => {
     localStorage.removeItem('crossword')
+    localStorage.removeItem('finalAnswer')
+    localStorage.removeItem('digitNumber')
+    localStorage.removeItem('modalInput')
     localStorage.removeItem('isPlayed')
   }, [])
 
