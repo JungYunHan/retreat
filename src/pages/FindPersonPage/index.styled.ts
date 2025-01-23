@@ -11,6 +11,12 @@ export const Layout = styled.div`
   padding-top: 50px;
 `
 
+export const TrainImage = styled.img`
+  width: 320px;
+  height: 150px;
+  object-fit: cover;
+`
+
 export const Image = styled.img`
   width: 320px;
   height: 200px;
@@ -19,19 +25,20 @@ export const Image = styled.img`
 
 export const Title = styled.div`
   font-family: GmarketSans, sans-serif;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
 `
 
 export const Strong = styled.strong`
+  font-size: 28px;
   font-weight: 600;
 `
 
 export const SubText = styled.div`
   font-family: Pretendard, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
