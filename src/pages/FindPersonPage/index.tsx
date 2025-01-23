@@ -26,7 +26,9 @@ const FindPersonPage = () => {
       <SubText>
         <Strong>목사님, 전도사님, 간사님</Strong>
         <br />
-        을 찾아서 셀원 전부가 나오도록 사진을 찍고
+        중 한 분을 찾아서
+        <br />
+        조원 전부가 나오도록 사진을 찍고
         <br />
         메인홀에 있는 진행요원에게 보여주세요!
       </SubText>
