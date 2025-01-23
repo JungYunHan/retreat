@@ -66,7 +66,7 @@ export const PuzzleInput = styled.input`
   font-family: Pretendard, sans-serif;
 `
 
-export const PuzzleNumberText = styled.span`
+export const PuzzleNumberText = styled.label`
   font-family: Pretendard, sans-serif;
   position: absolute;
   top: 2px;
@@ -108,7 +108,7 @@ export const FinalAnswerInput = styled.input`
   font-weight: bold;
 `
 
-export const FinalAnswerNumberBox = styled.div`
+export const FinalAnswerNumberBox = styled.label`
   font-family: Pretendard, sans-serif;
   position: absolute;
   top: 2px;

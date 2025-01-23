@@ -236,45 +236,49 @@ const QuizPage = () => {
       <PuzzleContainer>
         {/* 1 번째 행 */}
         <PuzzleWhiteCell $correct={isFirstRowCorrect || isFirstColumnCorrect}>
-          <PuzzleNumberText>1.ㄱ.a</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_1'}>1.ㄱ.a</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['1']}
             name={'1'}
+            id={'puzzle_1'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFirstRowCorrect}>
-          <PuzzleNumberText>2</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_2'}>2</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['2']}
             name={'2'}
+            id={'puzzle_2'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFirstRowCorrect}>
-          <PuzzleNumberText>3</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_3'}>3</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['3']}
             name={'3'}
+            id={'puzzle_3'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFirstRowCorrect || isSecondColumnCorrect}>
-          <PuzzleNumberText>4.b</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_4'}>4.b</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['4']}
             name={'4'}
+            id={'puzzle_4'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -286,34 +290,37 @@ const QuizPage = () => {
           <PuzzleNumberText>6</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isSecondRowCorrect}>
-          <PuzzleNumberText>7.ㄴ</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_7'}>7.ㄴ</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['7']}
             name={'7'}
+            id={'puzzle_7'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSecondRowCorrect || isThirdColumnCorrect}>
-          <PuzzleNumberText>8.c</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_8'}>8.c</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['8']}
             name={'8'}
+            id={'puzzle_8'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSecondRowCorrect}>
-          <PuzzleNumberText>9</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_9'}>9</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['9']}
             name={'9'}
+            id={'puzzle_9'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -330,12 +337,13 @@ const QuizPage = () => {
 
         {/* 2 번째 행 */}
         <PuzzleWhiteCell $correct={isFirstColumnCorrect}>
-          <PuzzleNumberText>13</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_13'}>13</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['13']}
             name={'13'}
+            id={'puzzle_13'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -347,12 +355,13 @@ const QuizPage = () => {
           <PuzzleNumberText>15</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isSecondColumnCorrect}>
-          <PuzzleNumberText>16</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_16'}>16</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['16']}
             name={'16'}
+            id={'puzzle_16'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -367,12 +376,13 @@ const QuizPage = () => {
           <PuzzleNumberText>19</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isThirdColumnCorrect}>
-          <PuzzleNumberText>20</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_20'}>20</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['20']}
             name={'20'}
+            id={'puzzle_20'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -392,12 +402,13 @@ const QuizPage = () => {
 
         {/* 3 번째 행 */}
         <PuzzleWhiteCell $correct={isFirstColumnCorrect}>
-          <PuzzleNumberText>25</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_25'}>25</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['25']}
             name={'25'}
+            id={'puzzle_25'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -409,12 +420,13 @@ const QuizPage = () => {
           <PuzzleNumberText>27</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isSecondColumnCorrect}>
-          <PuzzleNumberText>28</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_28'}>28</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['28']}
             name={'28'}
+            id={'puzzle_28'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -429,12 +441,13 @@ const QuizPage = () => {
           <PuzzleNumberText>31</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isThirdColumnCorrect}>
-          <PuzzleNumberText>32</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_32'}>32</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['32']}
             name={'32'}
+            id={'puzzle_32'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -454,12 +467,13 @@ const QuizPage = () => {
 
         {/* 4 번째 행 */}
         <PuzzleWhiteCell $correct={isFirstColumnCorrect}>
-          <PuzzleNumberText>37</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_37'}>37</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['37']}
             name={'37'}
+            id={'puzzle_37'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -471,12 +485,13 @@ const QuizPage = () => {
           <PuzzleNumberText>39</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isSecondColumnCorrect}>
-          <PuzzleNumberText>40</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_40'}>40</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['40']}
             name={'40'}
+            id={'puzzle_40'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -488,45 +503,49 @@ const QuizPage = () => {
           <PuzzleNumberText>42</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isThirdRowCorrect || isFourthColumnCorrect}>
-          <PuzzleNumberText>43.ㄷ.d</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_43'}>43.ㄷ.d</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['43']}
             name={'43'}
+            id={'puzzle_43'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isThirdRowCorrect || isThirdColumnCorrect}>
-          <PuzzleNumberText>44</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_44'}>44</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['44']}
             name={'44'}
+            id={'puzzle_44'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isThirdRowCorrect}>
-          <PuzzleNumberText>45</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_45'}>45</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['45']}
             name={'45'}
+            id={'puzzle_45'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isThirdRowCorrect}>
-          <PuzzleNumberText>46</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_46'}>46</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['46']}
             name={'46'}
+            id={'puzzle_46'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -549,12 +568,13 @@ const QuizPage = () => {
           <PuzzleNumberText>51</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isSecondColumnCorrect}>
-          <PuzzleNumberText>52</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_52'}>52</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['52']}
             name={'52'}
+            id={'puzzle_52'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -566,12 +586,13 @@ const QuizPage = () => {
           <PuzzleNumberText>54</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isFourthColumnCorrect}>
-          <PuzzleNumberText>55</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_55'}>55</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['55']}
             name={'55'}
+            id={'puzzle_55'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -603,23 +624,25 @@ const QuizPage = () => {
           <PuzzleNumberText>63</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isFourthRowCorrect || isSecondColumnCorrect}>
-          <PuzzleNumberText>64.ㄹ</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_64'}>64.ㄹ</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['64']}
             name={'64'}
+            id={'puzzle_64'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFourthRowCorrect || isFifthColumnCorrect}>
-          <PuzzleNumberText>65.e</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_65'}>65.e</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['65']}
             name={'65'}
+            id={'puzzle_65'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -628,12 +651,13 @@ const QuizPage = () => {
           <PuzzleNumberText>66</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isFourthColumnCorrect}>
-          <PuzzleNumberText>67</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_67'}>67</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['67']}
             name={'67'}
+            id={'puzzle_67'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -642,34 +666,37 @@ const QuizPage = () => {
           <PuzzleNumberText>68</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isFifthRowCorrect}>
-          <PuzzleNumberText>69.ㅁ</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_69'}>69.ㅁ</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['69']}
             name={'69'}
+            id={'puzzle_69'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFifthRowCorrect || isSixthColumnCorrect}>
-          <PuzzleNumberText>70.f</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_70'}>70.f</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['70']}
             name={'70'}
+            id={'puzzle_70'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isFifthRowCorrect}>
-          <PuzzleNumberText>71</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_71'}>71</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['71']}
             name={'71'}
+            id={'puzzle_71'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -692,12 +719,13 @@ const QuizPage = () => {
           <PuzzleNumberText>76</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isFifthColumnCorrect}>
-          <PuzzleNumberText>77</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_77'}>77</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['77']}
             name={'77'}
+            id={'puzzle_77'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -715,12 +743,13 @@ const QuizPage = () => {
           <PuzzleNumberText>81</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isSixthColumnCorrect}>
-          <PuzzleNumberText>82</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_82'}>82</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['82']}
             name={'82'}
+            id={'puzzle_82'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -737,12 +766,13 @@ const QuizPage = () => {
           <PuzzleNumberText>85</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isSeventhColumnCorrect}>
-          <PuzzleNumberText>86.g</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_86'}>86.g</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['86']}
             name={'86'}
+            id={'puzzle_86'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -754,45 +784,49 @@ const QuizPage = () => {
           <PuzzleNumberText>88</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isSixthRowCorrect || isFifthColumnCorrect}>
-          <PuzzleNumberText>89.ㅂ</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_89'}>89.ㅂ</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['89']}
             name={'89'}
+            id={'puzzle_89'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSixthRowCorrect}>
-          <PuzzleNumberText>90</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_90'}>90</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['90']}
             name={'90'}
+            id={'puzzle_90'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSixthRowCorrect}>
-          <PuzzleNumberText>91</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_91'}>91</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['91']}
             name={'91'}
+            id={'puzzle_91'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSixthRowCorrect || isEighthColumnCorrect}>
-          <PuzzleNumberText>92.h</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_92'}>92.h</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['92']}
             name={'92'}
+            id={'puzzle_92'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -801,34 +835,37 @@ const QuizPage = () => {
           <PuzzleNumberText>93</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isSeventhRowCorrect || isSixthColumnCorrect}>
-          <PuzzleNumberText>94.ㅅ</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_94'}>94.ㅅ</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['94']}
             name={'94'}
+            id={'puzzle_94'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSeventhRowCorrect}>
-          <PuzzleNumberText>95</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_95'}>95</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['95']}
             name={'95'}
+            id={'puzzle_95'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isSeventhRowCorrect}>
-          <PuzzleNumberText>96</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_96'}>96</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['96']}
             name={'96'}
+            id={'puzzle_96'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -841,45 +878,49 @@ const QuizPage = () => {
         <PuzzleWhiteCell
           $correct={isEighthRowCorrect || isSeventhColumnCorrect}
         >
-          <PuzzleNumberText>98.ㅇ</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_98'}>98.ㅇ</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['98']}
             name={'98'}
+            id={'puzzle_98'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isEighthRowCorrect}>
-          <PuzzleNumberText>99</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_99'}>99</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['99']}
             name={'99'}
+            id={'puzzle_99'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isEighthRowCorrect}>
-          <PuzzleNumberText>100</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_100'}>100</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['100']}
             name={'100'}
+            id={'puzzle_100'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isEighthRowCorrect || isFifthColumnCorrect}>
-          <PuzzleNumberText>101</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_101'}>101</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['101']}
             name={'101'}
+            id={'puzzle_101'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -891,12 +932,13 @@ const QuizPage = () => {
           <PuzzleNumberText>103</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isEighthColumnCorrect}>
-          <PuzzleNumberText>104</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_104'}>104</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['104']}
             name={'104'}
+            id={'puzzle_104'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -919,12 +961,13 @@ const QuizPage = () => {
           <PuzzleNumberText>109</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isSeventhColumnCorrect}>
-          <PuzzleNumberText>110</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_110'}>110</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['110']}
             name={'110'}
+            id={'puzzle_110'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -945,23 +988,25 @@ const QuizPage = () => {
           <PuzzleNumberText>115</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isNinthRowCorrect || isEighthColumnCorrect}>
-          <PuzzleNumberText>116.ㅈ</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_116'}>116.ㅈ</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['116']}
             name={'116'}
+            id={'puzzle_116'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
         </PuzzleWhiteCell>
         <PuzzleWhiteCell $correct={isNinthRowCorrect}>
-          <PuzzleNumberText>117</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_117'}>117</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['117']}
             name={'117'}
+            id={'puzzle_117'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -999,12 +1044,13 @@ const QuizPage = () => {
           <PuzzleNumberText>127</PuzzleNumberText>
         </PuzzleGreyCell>
         <PuzzleWhiteCell $correct={isEighthColumnCorrect}>
-          <PuzzleNumberText>128</PuzzleNumberText>
+          <PuzzleNumberText htmlFor={'puzzle_128'}>128</PuzzleNumberText>
           <PuzzleInput
             type={'text'}
             maxLength={1}
             value={inputs['128']}
             name={'128'}
+            id={'puzzle_128'}
             autoComplete={'off'}
             onChange={handlePuzzleInputChange}
           />
@@ -1025,45 +1071,49 @@ const QuizPage = () => {
 
       <FinalAnswerContainer>
         <FinalAnswerCell>
-          <FinalAnswerNumberBox>1</FinalAnswerNumberBox>
+          <FinalAnswerNumberBox htmlFor={'final_1'}>1</FinalAnswerNumberBox>
           <FinalAnswerInput
             type={'text'}
             maxLength={1}
             value={finalAnswerInputs['1']}
             name={'1'}
+            id={'final_1'}
             autoComplete={'off'}
             onChange={handleFinalAnswerChange}
           />
         </FinalAnswerCell>
         <FinalAnswerCell>
-          <FinalAnswerNumberBox>2</FinalAnswerNumberBox>
+          <FinalAnswerNumberBox htmlFor={'final_2'}>2</FinalAnswerNumberBox>
           <FinalAnswerInput
             type={'text'}
             maxLength={1}
             value={finalAnswerInputs['2']}
             name={'2'}
+            id={'final_2'}
             autoComplete={'off'}
             onChange={handleFinalAnswerChange}
           />
         </FinalAnswerCell>
         <FinalAnswerCell>
-          <FinalAnswerNumberBox>3</FinalAnswerNumberBox>
+          <FinalAnswerNumberBox htmlFor={'final_3'}>3</FinalAnswerNumberBox>
           <FinalAnswerInput
             type={'text'}
             maxLength={1}
             value={finalAnswerInputs['3']}
             name={'3'}
+            id={'final_3'}
             autoComplete={'off'}
             onChange={handleFinalAnswerChange}
           />
         </FinalAnswerCell>
         <FinalAnswerCell>
-          <FinalAnswerNumberBox>4</FinalAnswerNumberBox>
+          <FinalAnswerNumberBox htmlFor={'final_4'}>4</FinalAnswerNumberBox>
           <FinalAnswerInput
             type={'text'}
             maxLength={1}
             value={finalAnswerInputs['4']}
             name={'4'}
+            id={'final_4'}
             autoComplete={'off'}
             onChange={handleFinalAnswerChange}
           />
