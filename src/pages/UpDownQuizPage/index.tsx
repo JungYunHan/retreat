@@ -12,7 +12,7 @@ import {
   RedCell,
   YellowCell,
 } from '@/pages/UpDownQuizPage/index.styled.ts'
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { Modal } from '@/components/common/Modal.tsx'
 import { Button } from '@/components/common/Button.tsx'
 import { useNavigate } from 'react-router-dom'
@@ -37,6 +37,18 @@ const UpDownQuizPage = () => {
     useState(false)
   const [isAnswerWrongModalOpen, setIsAnswerWrongModalOpen] = useState(false)
 
+  useEffect(() => {
+    const digitNumberAnswer = localStorage.getItem('digitNumber')
+    const modalInput = localStorage.getItem('modalInput')
+
+    if (digitNumberAnswer) {
+      setInputs(JSON.parse(digitNumberAnswer))
+    }
+    if (modalInput) {
+      setModalInputs(modalInput)
+    }
+  }, [])
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
 
@@ -44,12 +56,21 @@ const UpDownQuizPage = () => {
       ...inputs,
       [name]: value.replace(/[^0-9]/g, ''),
     })
+
+    localStorage.setItem(
+      'digitNumber',
+      JSON.stringify({
+        ...inputs,
+        [name]: value.replace(/[^0-9]/g, ''),
+      }),
+    )
   }
 
   const isCorrect = Object.values(inputs).join('') === '0246'
 
   const handleModalInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setModalInputs(e.target.value)
+    localStorage.setItem('modalInput', e.target.value)
   }
 
   const handleButtonClick = () => {
@@ -144,6 +165,7 @@ const UpDownQuizPage = () => {
             <ModalInput
               $color={'#fff'}
               autoComplete={'off'}
+              value={modalInputs}
               onChange={handleModalInputChange}
             />
             <Button onClick={handleButtonClick}>제출하기</Button>

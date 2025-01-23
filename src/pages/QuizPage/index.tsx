@@ -86,8 +86,13 @@ const QuizPage = () => {
 
   useEffect(() => {
     const crossword = localStorage.getItem('crossword')
+    const finalAnswer = localStorage.getItem('finalAnswer')
+
     if (crossword) {
       setInputs(JSON.parse(crossword))
+    }
+    if (finalAnswer) {
+      setFinalAnswerInputs(JSON.parse(finalAnswer))
     }
   }, [])
 
@@ -218,6 +223,7 @@ const QuizPage = () => {
   }
 
   const handleAllAnswerCorrectModalClose = () => {
+    localStorage.setItem('finalAnswer', JSON.stringify(finalAnswerInputs))
     setIsAllAnswerCorrectModalOpen(false)
     navigate('/updown')
   }
