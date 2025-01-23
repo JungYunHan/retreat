@@ -21,6 +21,7 @@ const UpDownQuizPage = () => {
   const ANSWER_ONE = '날마다마음을같이하여성전에모이기를힘쓰고'
   const ANSWER_TWO =
     '날마다마음을같이하여성전에모이기를힘쓰고집에서떡을떼며기쁨과순전한마음으로음식을먹고'
+  const ANSWER_THREE = '마음을같이하여날마다성전에모이기를힘쓰고'
 
   const navigate = useNavigate()
 
@@ -56,7 +57,11 @@ const UpDownQuizPage = () => {
 
     setAttemptCount(attemptCount + 1)
 
-    if (modalInput === ANSWER_ONE || modalInput === ANSWER_TWO) {
+    if (
+      modalInput === ANSWER_ONE ||
+      modalInput === ANSWER_TWO ||
+      modalInput === ANSWER_THREE
+    ) {
       setIsAnswerCorrectModalOpen(true)
     } else {
       setIsAnswerWrongModalOpen(true)
